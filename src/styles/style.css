@@ -1,0 +1,49 @@
+.contribution--graph__greed {
+  padding-left: 200px;
+  padding-top: 100px;
+}
+.contribution--graph__cell {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.contribution--graph__cell:hover {
+  border: 1px solid black;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  z-index: 999;
+  pointer-events: none;
+  width: 145px;
+  height: 48px;
+  border-radius: 3px;
+}
+.no-contributions {
+  background-color: #ededed;
+}
+
+.low-contributions {
+  background-color: #acd5f2;
+}
+
+.medium-contributions {
+  background-color: #7fa8c9;
+}
+
+.high-contributions {
+  background-color: #527ba0;
+}
+
+.very-high-contributions {
+  background-color: #254e77;
+}
