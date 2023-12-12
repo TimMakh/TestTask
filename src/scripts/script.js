@@ -103,6 +103,41 @@ async function renderDataWithTooltip() {
 
       container.appendChild(weekColumn);
     }
+
+    function addAdditionalRow() {
+      const additionalRow = document.createElement("div");
+      additionalRow.classList.add("additional-row");
+
+      const smallerText = document.createElement("span");
+      smallerText.textContent = "Меньше";
+      smallerText.classList.add("text");
+      additionalRow.appendChild(smallerText);
+
+      const cellClasses = [
+        "no-contributions",
+        "low-contributions",
+        "medium-contributions",
+        "high-contributions",
+        "very-high-contributions",
+      ];
+
+      for (let i = 0; i < 5; i++) {
+        const additionalCell = document.createElement("div");
+        additionalCell.classList.add("additionalCellBlock");
+        additionalCell.classList.add("contribution--graph__cell");
+        additionalCell.classList.add(cellClasses[i]);
+        additionalRow.appendChild(additionalCell);
+      }
+
+      const largerText = document.createElement("span");
+      largerText.textContent = "Больше";
+      largerText.classList.add("text");
+      additionalRow.appendChild(largerText);
+
+      container.appendChild(additionalRow);
+    }
+
+    addAdditionalRow();
   } catch (error) {
     console.error("Error fetching data:", error);
   }
