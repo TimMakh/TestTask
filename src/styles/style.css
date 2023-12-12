@@ -47,3 +47,23 @@
 .very-high-contributions {
   background-color: #254e77;
 }
+
+.additional-row {
+  display: flex;
+  padding-top: 10px;
+}
+
+.text {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 10px;
+  letter-spacing: 0em;
+  padding-top: 10px;
+  color: #959494;
+  margin-right: 5px;
+}
+
+.additionalCellBlock {
+  margin-right: 5px;
+}
