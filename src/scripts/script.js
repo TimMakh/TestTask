@@ -47,7 +47,7 @@ async function renderDataWithTooltip() {
 
     calculateEndDate();
 
-    endDate.setDate(endDate.getDate() - 50 * 7 + 1);
+    endDate.setDate(endDate.getDate() - 50 * 7 + 2);
 
     for (let j = 0; j < 7; j++) {
       const weekColumn = document.createElement("div");
@@ -56,6 +56,7 @@ async function renderDataWithTooltip() {
       for (let i = 0; i < 50; i++) {
         const currentDate = new Date(endDate);
         currentDate.setDate(currentDate.getDate() + (j + i * 7));
+        console.log(currentDate);
 
         const clone = document
           .querySelector(".contribution--graph__template")
@@ -64,6 +65,7 @@ async function renderDataWithTooltip() {
         const dayOfWeek = daysOfWeek[j];
         const dateString = currentDate.toISOString().slice(0, 10);
         const contributions = contributionsData[dateString] || 0;
+        console.log(dateString);
 
         cell.addEventListener("click", function (event) {
           const rect = cell.getBoundingClientRect();
