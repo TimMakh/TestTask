@@ -8,7 +8,46 @@ async function renderDataWithTooltip() {
     const daysOfWeek = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
 
     const endDate = new Date();
-    endDate.setDate(endDate.getDate() - 50 * 7);
+
+    function calculateEndDate() {
+      let sravn = endDate.toString().slice(0, 3);
+
+      if (sravn === "Mon") {
+        endDate.setDate(endDate.getDate() + 6);
+        return endDate;
+      }
+
+      if (sravn === "Tue") {
+        endDate.setDate(endDate.getDate() + 5);
+        return endDate;
+      }
+
+      if (sravn === "Wed") {
+        endDate.setDate(endDate.getDate() + 4);
+        return endDate;
+      }
+
+      if (sravn === "Thu") {
+        endDate.setDate(endDate.getDate() + 3);
+        return endDate;
+      }
+
+      if (sravn === "Fri") {
+        endDate.setDate(endDate.getDate() + 2);
+        return endDate;
+      }
+
+      if (sravn === "Sat") {
+        endDate.setDate(endDate.getDate() + 1);
+        return endDate;
+      } else {
+        return endDate;
+      }
+    }
+
+    calculateEndDate();
+
+    endDate.setDate(endDate.getDate() - 50 * 7 + 1);
 
     for (let j = 0; j < 7; j++) {
       const weekColumn = document.createElement("div");
