@@ -1,4 +1,4 @@
 ---
-permalink: index.html
+permalink: /src/index.html
 ---
 Test Task.
